@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "Run ppxlib benchmarks"
+description: """\
+Third-party code in benchmarks depends on later versions of the ocaml
+than ppxlib itself. Also the benchmark runner has dependencies that ppxlib doesn't
+have."""
+maintainer: "opensource@janestreet.com"
+authors: "Jane Street Group, LLC <opensource@janestreet.com>"
+license: "MIT"
+homepage: "https://github.com/ocaml-ppx/ppxlib"
+doc: "https://ocaml-ppx.github.io/ppxlib/"
+bug-reports: "https://github.com/ocaml-ppx/ppxlib/issues"
+depends: [
+  "dune" {>= "2.7"}
+  "ocaml" {>= "4.04.1"}
+  "ppxlib" {= version}
+  "base"
+  "yojson"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/ocaml-ppx/ppxlib.git"
+url {
+  src:
+    "https://github.com/patricoferris/ppxlib/archive/heads/5.2-bump.tar.gz"
+  checksum: [
+    "md5=94dbd7eaba9cdc0dc671cff3eac5b09a"
+    "sha512=ba536ecac94308b4ca9b1a6b2d6258c47da092d73bbd3135e4e9aa2346ec4660703d1eefa9e64c89e202f1d94765d94c66d26c7a5027f6cb74c39a35b9e138dc"
+  ]
+}
