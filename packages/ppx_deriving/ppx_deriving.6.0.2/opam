@@ -31,7 +31,7 @@ url {
   src:
     "https://github.com/patricoferris/ppx_deriving/archive/heads/5.2-ast-bump.tar.gz"
   checksum: [
-    "md5=00379d1b1a27b4955303124fb367f845"
-    "sha512=5c653fdcd432dbbb638a3fec3c3be0ad4601302895c856cca1e6c0f048c67a64d45fcc09d3daa729443a1dd14568b2131218d4908c01d2d43780c6114205661e"
+    "md5=345117dc5292757ccd6b944ba4fc8512"
+    "sha512=641a1fc2f9da3c242efda26fe909da463356d59397ec101cf30c4c1485c133d793c82bb9841a0e66beb86774aea18ca14f88f6e5ca88bba75df567a251b5aeef"
   ]
 }
