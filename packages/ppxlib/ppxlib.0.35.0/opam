@@ -55,7 +55,7 @@ url {
   src:
     "https://github.com/patricoferris/ppxlib/archive/heads/5.2-bump.tar.gz"
   checksum: [
-    "md5=34f402ccb323eb2a10cced5a75ff57f8"
-    "sha512=f75a270336768e1ecc13d3be1d3b415d81b8a0772ee7ba8741b599d55c49d7e43e454cbf72299c71086a27af467055da7be5fd60392dd49c95680381ce5ffb86"
+    "md5=55efa0e6e4a1a8f403ffc266374b4188"
+    "sha512=5730dca749c6c19488368789265a90dc57f568da9131dee6eec83ad75de69d90a7d0f1f1464ad589a21ae05bd72795d8ef7b81cca5b05a7548be368189e734e4"
   ]
 }
