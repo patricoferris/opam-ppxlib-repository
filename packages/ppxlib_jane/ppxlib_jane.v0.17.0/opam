@@ -11,7 +11,7 @@ bug-reports: "https://github.com/janestreet/ppxlib_jane/issues"
 depends: [
   "ocaml" {>= "5.1.0"}
   "dune" {>= "3.11.0"}
-  "ppxlib" {>= "0.28.0"}
+  "ppxlib" {>= "0.33.0"}
 ]
 available: arch != "arm32" & arch != "x86_32"
 build: ["dune" "build" "-p" name "-j" jobs]
@@ -20,7 +20,7 @@ url {
   src:
     "https://github.com/patricoferris/ppxlib_jane/archive/heads/5.2-ast-bump.tar.gz"
   checksum: [
-    "md5=956889b31d7e47296931325471f8e3b0"
-    "sha512=72cf4d89b8c6b02ef2d3f4a0a2c2b57933d4aacf3498498944b606c8ff2e78d8043c22a9860108ad83f435d92f44bb635bb09417a0c6da95278dc3364f9be8b6"
+    "md5=1cf2aa0cb9425d97fecf439d6e6db529"
+    "sha512=62cdeda3dc8bb2f076901bf1981279d3dcc4afa84abe9f319b4ebfb010a375726ba8e3699a28739e0bae9ea0b1238d72b68937e8af77cc16e0d98eb51fcc9882"
   ]
 }
