@@ -1,0 +1,27 @@
+opam-version: "2.0"
+synopsis: "Let expressions, inferring pattern type from expression."
+description:
+  "Provides a ppx for [let%tydi]: type-directed [let] bindings. In [let%tydi a = b in ...], [a]'s type is inferred from [b] rather than the other way around. This is convenient for record patterns whose fields are not in scope."
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
+license: "MIT"
+homepage: "https://github.com/janestreet/ppx_tydi"
+doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_tydi/index.html"
+bug-reports: "https://github.com/janestreet/ppx_tydi/issues"
+depends: [
+  "ocaml" {>= "5.1.0"}
+  "base"
+  "dune" {>= "3.11.0"}
+  "ppxlib" {>= "0.33.0"}
+]
+available: arch != "arm32" & arch != "x86_32"
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/janestreet/ppx_tydi.git"
+url {
+  src:
+    "https://github.com/patricoferris/ppx_tydi/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=4aadae12d3823e0a5fc9b423830e2bf1"
+    "sha512=497a401ea9fe48e3e5a11cce2139949640a2235ec79a1f0eea10bf7aa4187d6bca929632acdace7a3767672d7ac54f0875881ec36a2e491d3d7d51f47154c84a"
+  ]
+}
