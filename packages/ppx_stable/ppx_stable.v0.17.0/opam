@@ -1,0 +1,30 @@
+opam-version: "2.0"
+synopsis: "Stable types conversions generator"
+description: """\
+A ppx extension for easier implementation of conversion functions between almost
+identical types."""
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
+license: "MIT"
+homepage: "https://github.com/janestreet/ppx_stable"
+doc:
+  "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_stable/index.html"
+bug-reports: "https://github.com/janestreet/ppx_stable/issues"
+depends: [
+  "ocaml" {>= "5.1.0"}
+  "base"
+  "ppxlib_jane"
+  "dune" {>= "3.11.0"}
+  "ppxlib" {>= "0.33.0"}
+]
+available: arch != "arm32" & arch != "x86_32"
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/janestreet/ppx_stable.git"
+url {
+  src:
+    "https://github.com/patricoferris/ppx_stable/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=93e99dacbec8dc409bc4a4773f5ada2a"
+    "sha512=6f46e11f6fa28511824140d1afe0320d414676edcec75bdcf3686b435a48de1c517995dce7d06ebe432d5f0b8db01a61078e8a5196e650f3447eb271db3eddb1"
+  ]
+}
