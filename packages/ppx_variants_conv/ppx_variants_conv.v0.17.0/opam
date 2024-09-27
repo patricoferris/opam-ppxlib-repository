@@ -1,0 +1,30 @@
+opam-version: "2.0"
+synopsis:
+  "Generation of accessor and iteration functions for ocaml variant types"
+description: "Part of the Jane Street's PPX rewriters collection."
+maintainer: "Jane Street developers"
+authors: "Jane Street Group, LLC"
+license: "MIT"
+homepage: "https://github.com/janestreet/ppx_variants_conv"
+doc:
+  "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_variants_conv/index.html"
+bug-reports: "https://github.com/janestreet/ppx_variants_conv/issues"
+depends: [
+  "ocaml" {>= "5.1.0"}
+  "base"
+  "ppxlib_jane"
+  "variantslib"
+  "dune" {>= "3.11.0"}
+  "ppxlib" {>= "0.33.0"}
+]
+available: arch != "arm32" & arch != "x86_32"
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/janestreet/ppx_variants_conv.git"
+url {
+  src:
+    "https://github.com/patricoferris/ppx_variants_conv/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=f7d611036bad1441c1f919fcbf1374af"
+    "sha512=091ad210c8927decdc4cb68c52626b4aefc39df436505b529276ed6a7412cc89650df9f691f68e9df7047be5f7edd8c501977966beed5d2f490a4527bc4f66bc"
+  ]
+}
