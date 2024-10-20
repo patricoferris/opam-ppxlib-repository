@@ -1,0 +1,42 @@
+opam-version: "2.0"
+synopsis: "Ergonomic, lightweight conditional compilation through attributes"
+description:
+  "Config implements the [@@config] annotation, to conditionally compile modules. You can use a small boolean language to check for conditions including some built-in ones and environment variables."
+maintainer: "Leandro Ostera <leandro@abstractmachines.dev>"
+authors: "Leandro Ostera <leandro@abstractmachines.dev>"
+license: "MIT"
+tags: [
+  "conditional" "compilation" "target_os" "target_arch" "arch" "os" "system"
+]
+homepage: "https://github.com/ocaml-sys/config.ml"
+bug-reports: "https://github.com/ocaml-sys/config.ml/issues"
+depends: [
+  "ocaml" {>= "5.1"}
+  "ppxlib" {>= "0.31.0"}
+  "spices" {>= "0.0.2"}
+  "dune" {>= "3.11"}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/ocaml-sys/config.ml.git"
+url {
+  src:
+    "https://github.com/patricoferris/config.ml/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=2abec7c560327a307d3bd41f6cf1598c"
+    "sha512=35c2468f86f613555330087e043d801178f7b0bc87016c84b2ef4c50b5bba1696715b469b208faba6f6d91e4b61cb5e58072ad4a4a7110d0336b1b9976e8df8d"
+  ]
+}
