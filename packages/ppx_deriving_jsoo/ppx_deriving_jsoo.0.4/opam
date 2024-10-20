@@ -1,0 +1,39 @@
+opam-version: "2.0"
+synopsis: "Ppx deriver for Js_of_ocaml"
+maintainer: "contact@origin-labs.com"
+authors: "Maxime Levillain <maxime.levillain@origin-labs.com"
+license: "LGPL-2.1-or-later"
+homepage: "https://gitlab.com/o-labs/ppx_deriving_jsoo"
+bug-reports: "https://gitlab.com/o-labs/ppx_deriving_jsoo/-/issues"
+depends: [
+  "dune" {>= "2.0"}
+  "ocaml" {>= "4.08"}
+  "ppxlib" {>= "0.18.0"}
+]
+depopts: ["ezjs_min" "ppx_deriving_encoding"]
+conflicts: [
+  "ezjs_min" {< "0.2.1"}
+]
+build: [
+  ["dune" "subst"] {pinned}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git://gitlab.com/o-labs/ppx_deriving_jsoo"
+url {
+  src:
+    "https://gitlab.com/patrickferris/ppx_deriving_jsoo/-/archive/0.4/ppx_deriving_jsoo-0.4.tar.gz"
+  checksum: [
+    "md5=5fe493745128cd2346be095aa10ba513"
+    "sha512=43b6616ca9a6b6ca7fefa3588602d4ac3628e983b6c80b51df114e6c94dcae47f086e6e0984a934c7551d890fb0405bd7fdfd8bd62c82920b335f43e296abd07"
+  ]
+}
