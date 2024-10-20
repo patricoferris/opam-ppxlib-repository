@@ -1,0 +1,39 @@
+opam-version: "2.0"
+synopsis: "Compiler from OCaml bytecode to JavaScript"
+description:
+  "Js_of_ocaml is a compiler from OCaml bytecode to JavaScript. It makes it possible to run pure OCaml programs in JavaScript environment like browsers and Node.js"
+maintainer: "Ocsigen team <dev@ocsigen.org>"
+authors: "Ocsigen team <dev@ocsigen.org>"
+license: [
+  "GPL-2.0-or-later" "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception"
+]
+homepage: "https://ocsigen.org/js_of_ocaml/latest/manual/overview"
+doc: "https://ocsigen.org/js_of_ocaml/latest/manual/overview"
+bug-reports: "https://github.com/ocsigen/js_of_ocaml/issues"
+depends: [
+  "dune" {>= "3.15"}
+  "ocaml" {>= "4.08"}
+  "js_of_ocaml" {= version}
+  "js_of_ocaml-ppx" {= version}
+  "react" {>= "1.2.2"}
+  "reactiveData" {>= "0.2"}
+  "tyxml" {>= "4.6"}
+  "num" {with-test}
+  "ppx_expect" {>= "v0.14.2" & with-test}
+  "ppxlib" {>= "0.22.0" & with-test}
+  "re" {>= "1.9.0" & with-test}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs "@install" "@doc" {with-doc}]
+]
+dev-repo: "git+https://github.com/ocsigen/js_of_ocaml.git"
+url {
+  src:
+    "https://github.com/patricoferris/js_of_ocaml/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=f229c8cfe5fb13402850c56d08aca4e8"
+    "sha512=f858150f8bfd93cd817d31ad14329b526d5e32c5d95c676d924b642ac1df9d04df5533c4934f7e1b2008a71aca5cd1b01886f9b27efda077cb7a2b2f9781bbca"
+  ]
+}
