@@ -24,7 +24,7 @@ url {
   src:
     "https://github.com/patricoferris/graphql-ppx/archive/heads/5.2-ast-bump.tar.gz"
   checksum: [
-    "md5=6892b492305e5e83fedca890f5db608f"
-    "sha512=f237b6b3db99e1a53d9500eb19c2d7c56739103799a17cf51571339e46ff35b1bbfbb75bca9066d1fba0b97c91d0574a6a9d5a6e4cd8ec702a2ff88ab12ba132"
+    "md5=9413c384320437e960ef83068af2fa45"
+    "sha512=791885c8b722a4e8382a882579511c34e7718a8997f1e86455012e910ffa408f8626e501d155262d6195cc24be6ee8efa029d5c9ee431e70c9c6b727e716bbad"
   ]
 }
