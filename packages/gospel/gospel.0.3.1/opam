@@ -50,7 +50,7 @@ url {
   src:
     "https://github.com/patricoferris/gospel/archive/heads/5.2-ast-bump.tar.gz"
   checksum: [
-    "md5=076d4e4ae5fb8bcea8514e31885211db"
-    "sha512=c4e014897254edd0452f2680de9911a1fd62877a2a4fd8a315ab656db278ea3d610f127042e6c5c08aa0a9654eefdf67e4ba4c97227dd9c99dec20b2f038504b"
+    "md5=2729f443dc3fed41c50b98f407be8872"
+    "sha512=3f29a4d219e795dd0db8e4ad2c2b416c728a2bb37e35039e0263de6cd1a88d5ce11a344d5e06f60ad7949693e57836739beb63f1ce0fc22d9a9db48153894419"
   ]
 }
