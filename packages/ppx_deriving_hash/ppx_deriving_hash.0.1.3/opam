@@ -1,0 +1,38 @@
+opam-version: "2.0"
+synopsis: "[@@deriving hash]"
+description:
+  "Deriver for standard hash functions without extra dependencies."
+maintainer: "Simmo Saan <simmo.saan@gmail.com>"
+authors: "Simmo Saan <simmo.saan@gmail.com>"
+license: "MIT"
+homepage: "https://github.com/sim642/ppx_deriving_hash"
+bug-reports: "https://github.com/sim642/ppx_deriving_hash/issues"
+depends: [
+  "dune" {>= "2.8"}
+  "ppxlib"
+  "ppx_deriving" {>= "5.0"}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/sim642/ppx_deriving_hash.git"
+url {
+  src:
+    "https://github.com/patricoferris/ppx_deriving_hash/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=539ec71fe7da01d27a521700e05e0b6a"
+    "sha512=9af0de8ccc1ca2153ac36e8dc9b7cf26adb09d96c20a3ee48e827306fdf280c9ef456c59d6644513f99acf30ea1e2e2aabc48eb5be39ebe161a1cb46c5bcd3f7"
+  ]
+}
