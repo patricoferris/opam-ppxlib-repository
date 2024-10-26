@@ -1,0 +1,38 @@
+opam-version: "2.0"
+synopsis: "Inline tests backend for alcotest."
+description: "Run inline tests in the style of Alcotest."
+maintainer: "kirang@comp.nus.edu.sg"
+authors: "Kiran Gopinathan"
+license: "ISC"
+homepage: "https://gitlab.com/gopiandcode/ppx-inline-alcotest"
+bug-reports: "https://gitlab.com/gopiandcode/ppx-inline-alcotest/issues"
+depends: [
+  "dune" {>= "2.0"}
+  "ppxlib" {>= "0.22.0" & with-test}
+  "metaquot" {>= "~"}
+  "ocaml" {>= "4.05.0"}
+  "alcotest" {>= "1.0.0"}
+]
+build: [
+  ["dune" "subst"] {pinned}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://gitlab.com/gopiandcode/ppx-inline-alcotest.git"
+url {
+  src:
+    "https://gitlab.com/patrickferris/ppx-inline-alcotest/-/archive/1.0.1/ppx_inline_alcotest-1.0.1.tar.gz"
+  checksum: [
+    "md5=1923ea8803dee6fb7ef76eeb00650d7a"
+    "sha512=4731076326a9f951e09a77b9af994789adee4f449e2e73b8f08f4526ee6544769a9c4ffc0a9fd49ed2a643eba3ffeb759226f8879814bbee8bb8d0d40d3114d4"
+  ]
+}
