@@ -1,0 +1,39 @@
+opam-version: "2.0"
+synopsis: "Opens a REPL in context"
+description: "The pry/pdb experience via a toplevel"
+maintainer: "darius.foo.tw@gmail.com"
+authors: "Darius Foo"
+license: "MIT"
+homepage: "https://github.com/dariusf/ppx_interact"
+bug-reports: "https://github.com/dariusf/ppx_interact/issues"
+depends: [
+  "dune" {>= "3.7"}
+  "ocaml" {>= "4.14"}
+  "cppo" {build}
+  "ppxlib" {>= "0.28.0"}
+  "linenoise" {>= "1.4.0"}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/dariusf/ppx_interact.git"
+url {
+  src:
+    "https://github.com/patricoferris/ppx_interact/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=3b35cda0037befe9a0374973c2838df5"
+    "sha512=fabc041c7ecc5697c59ba2a798d8cc4fed5527e513072a333a0bbf9216d0c9c916a29c5fbf3ea8f139d01201c0cebfb0b4a6d99d0c19c04a8148c0881bf1997a"
+  ]
+}
