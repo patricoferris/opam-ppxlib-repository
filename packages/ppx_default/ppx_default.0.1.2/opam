@@ -1,0 +1,37 @@
+opam-version: "2.0"
+synopsis: "Generate default values for your types"
+maintainer: "franciscosantosfcp@hotmail.com"
+authors: "Francisco Santos"
+license: "MIT"
+homepage: "https://github.com/ProgramingIsTheFuture/ppx_default"
+bug-reports: "https://github.com/ProgramingIsTheFuture/ppx_default/issues"
+depends: [
+  "dune" {>= "3.10"}
+  "ocaml" {>= "4.14"}
+  "ppxlib" {>= "0.25"}
+  "ppx_deriving"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/ProgramingIsTheFuture/ppx_default.git"
+url {
+  src:
+    "https://github.com/patricoferris/ppx_default/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=ead292a25d5398474ba57409660c85f4"
+    "sha512=cdd10eba5996759fca6a687005f2197997f037c7686ca8342dca46a4bddd99cec04b7a807e4b02bc6ac5c6dd4b041ce60314d40d210c948c8be0d32db1f90dda"
+  ]
+}
