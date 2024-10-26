@@ -1,0 +1,40 @@
+opam-version: "2.0"
+synopsis:
+  "PPX syntax for Lwt, providing something similar to async/await from JavaScript"
+maintainer: [
+  "Raphaël Proust <code@bnwr.net>" "Anton Bachin <antonbachin@yahoo.com>"
+]
+authors: ["Jérôme Vouillon" "Jérémie Dimino"]
+license: "MIT"
+homepage: "https://github.com/ocsigen/lwt"
+doc: "https://ocsigen.org/lwt"
+bug-reports: "https://github.com/ocsigen/lwt/issues"
+depends: [
+  "dune" {>= "1.12"}
+  "ocaml" {>= "4.08"}
+  "ppxlib" {>= "0.16.0"}
+  "lwt"
+]
+build: [
+  ["dune" "subst"] {pinned}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/ocsigen/lwt.git"
+url {
+  src:
+    "https://github.com/patricoferris/lwt/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=76e95b4f564a9bb963141bc97993f096"
+    "sha512=ade5583bd933323f01faddfb329c51f61a98abfeb8fea5a4ddabf29a225fb88e5fbecab3276e2dc164dbc8f778cc29592509247b848e1b484647c23b0ccfe8a5"
+  ]
+}
