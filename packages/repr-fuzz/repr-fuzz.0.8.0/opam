@@ -1,0 +1,39 @@
+opam-version: "2.0"
+synopsis: "Fuzz tests for the `repr` package"
+description: "Fuzz tests for the `repr` package"
+maintainer: "thomas@gazagnaire.org"
+authors: ["Thomas Gazagnaire" "Craig Ferguson"]
+license: "ISC"
+homepage: "https://github.com/mirage/repr"
+doc: "https://mirage.github.io/repr"
+bug-reports: "https://github.com/mirage/repr/issues"
+depends: [
+  "dune" {>= "2.7"}
+  "repr" {= version}
+  "crowbar" {= "0.2"}
+  "ppxlib" {>= "0.12.0"}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/mirage/repr.git"
+url {
+  src:
+    "https://github.com/patricoferris/repr/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=252acad9715da3e24c191f97aa427f18"
+    "sha512=08190476338d9c733a2fe657d391057436d7b416a2c76e2fe7e1c3e61f4f1deba5153ea219a68f85040d6939ebd986d045ad8c1eebe577578ed71fc0d7ea8a92"
+  ]
+}
