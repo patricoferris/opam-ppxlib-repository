@@ -1,0 +1,27 @@
+opam-version: "2.0"
+synopsis: "Ppx rewriter for [@@deriving jsobject]"
+description: "Ppx rewriter for [@@deriving jsobject]"
+maintainer: "Roma Sokolov <sokolov.r.v@gmail.com>"
+authors: "Roma Sokolov <sokolov.r.v@gmail.com>"
+license: "MIT"
+tags: ["syntax" "jsoo" "javascript"]
+homepage: "https://github.com/little-arhat/ppx_jsobject_conv"
+bug-reports: "https://github.com/little-arhat/ppx_jsobject_conv/issues"
+depends: [
+  "ocaml" {>= "4.10.0"}
+  "dune" {>= "2.7"}
+  "js_of_ocaml" {>= "4.0.0"}
+  "ppxlib" {>= "0.26.0"}
+  "webtest" {with-test}
+  "webtest-js" {with-test}
+]
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git://github.com/little-arhat/ppx_jsobject_conv.git"
+url {
+  src:
+    "https://github.com/patricoferris/ppx_jsobject_conv/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=a6afab5350acefcee0463eb77dace2bc"
+    "sha512=b802813bd3add34b794ca18303b1c6ea7401b9ae76ca8b6e20e51b4a951ae63e13aba7c2c170009a93cbb5773cea0dadd763826c7af4a98598649fc2347f8534"
+  ]
+}
