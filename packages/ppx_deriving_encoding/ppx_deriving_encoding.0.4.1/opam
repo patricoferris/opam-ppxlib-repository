@@ -1,0 +1,37 @@
+opam-version: "2.0"
+synopsis: "Ppx deriver for json-encoding"
+maintainer: "contact@origin-labs.com"
+authors: "Maxime Levillain <maxime.levillain@origin-labs.com>"
+license: "LGPL-2.1-or-later"
+homepage: "https://gitlab.com/o-labs/ppx_deriving_encoding"
+bug-reports: "https://gitlab.com/o-labs/ppx_deriving_encoding/-/issues"
+depends: [
+  "dune" {>= "2.8"}
+  "ocaml" {>= "4.08"}
+  "json-data-encoding" {>= "0.9"}
+  "ppxlib" {>= "0.26.0"}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git://gitlab.com/o-labs/ppx_deriving_encoding"
+url {
+  src:
+    "https://gitlab.com/patrickferris/ppx_deriving_encoding/-/archive/0.4.1/ppx_deriving_encoding-0.4.1.tar.gz"
+  checksum: [
+    "md5=edc7d350cd6dbc10f6479941a571cb4d"
+    "sha512=ba6f91776d8ad40ad91a9f82b177e27514e9570d9bb66b67a952fe6d410387b4951e56c17605ce4c9c93bca529910a05220dda86076539c10878c47bed373c16"
+  ]
+}
