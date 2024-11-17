@@ -1,0 +1,41 @@
+opam-version: "2.0"
+synopsis: "A PPX deriving generators for OCaml types"
+description:
+  "Provides a way to automatically get generators for a given type"
+maintainer: "François Thiré <bam@saroupille.com>"
+authors: "François Thiré <bam@saroupille.com>"
+license: "MIT"
+tags: ["test" "pbt" "shrinking" "internal" "bam" "ppx"]
+homepage: "https://github.com/francoisthire/bam"
+doc: "https://francoisthire.github.io/bam/"
+bug-reports: "https://github.com/francoisthire/bam/issues"
+depends: [
+  "ocaml" {>= "4.14" & < "5.3"}
+  "dune" {>= "3.7" & >= "3.7"}
+  "ppxlib" {>= "0.32.0"}
+  "dmap" {>= "0.5"}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/francoisthire/bam.git"
+url {
+  src:
+    "https://github.com/patricoferris/bam/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=1ccda9d2e0c905c7069eb5ebbafc4a7d"
+    "sha512=09bec9f0916db77c1a87e96651961913b1190dd0a6117a34a02e4ba307658fb1f0491a8af5b1e6bd9e273651d0937b25f332ab6b0d431f24601d5403f6290bb9"
+  ]
+}
