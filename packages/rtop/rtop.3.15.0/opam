@@ -1,0 +1,45 @@
+opam-version: "2.0"
+synopsis: "Reason toplevel"
+description:
+  "rtop is the toplevel (or REPL) for Reason, based on utop (https://github.com/ocaml-community/utop)."
+maintainer: [
+  "Jordan Walke <jordojw@gmail.com>"
+  "Antonio Nuno Monteiro <anmonteiro@gmail.com>"
+]
+authors: "Jordan Walke <jordojw@gmail.com>"
+license: "MIT"
+homepage: "https://reasonml.github.io/"
+bug-reports: "https://github.com/reasonml/reason/issues"
+depends: [
+  "dune" {>= "2.9"}
+  "ocaml" {>= "4.06" & < "5.3"}
+  "reason" {= version}
+  "utop" {>= "2.0"}
+  "cppo"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
+]
+dev-repo: "git+https://github.com/reasonml/reason.git"
+url {
+  src:
+    "https://github.com/patricoferris/reason/archive/heads/5.2-ast-bump.tar.gz"
+  checksum: [
+    "md5=8fd5b19a5f8d6d5268fa58eda218f122"
+    "sha512=299c55a8e663af3593c49d37b4e3670de2f53628ba4c08709f470d0b800b458c85aef6c91edeb4e9fe37ca1feeb5617e60127e6dedf8b9eeb70dac216c06c5b8"
+  ]
+}
